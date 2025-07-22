@@ -14,9 +14,12 @@ const App = () => {
     const fetchIPData = async () => {
       setLoading(true);
       try {
-        const ipResponse = await axios.get('https://api.ipify.org?format=json');
+        const ipResponse = await axios.get('https://ip-finder-backend-phi.vercel.app/api/ip');
         const ip = ipResponse.data.ip;
-        const locationResponse = await axios.get(`https://ipapi.co/${ip}/json/`);
+        const locationResponse = await axios.get(`https://ip-finder-backend-phi.vercel.app/api/location/${ip}`);
+        if (locationResponse.data.error) {
+          throw new Error(locationResponse.data.details || 'Failed to fetch location');
+        }
         setIpData({
           ip,
           city: locationResponse.data.city,
@@ -26,7 +29,7 @@ const App = () => {
         });
         setError(null);
       } catch (err) {
-        setError('Failed to fetch IP or location data.');
+        setError(`Failed to fetch IP or location data: ${err.message}`);
         console.error(err);
       } finally {
         setLoading(false);
