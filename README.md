@@ -16,8 +16,8 @@ A full-stack React application that fetches and displays a user's IP address and
 
 ## Screenshots
 - **Main Interface**: ![Main Interface](./src/assets/screnshots/screenshot1.jpg)
-- **Manual IP Input**: ![Manual IP Input](screenshots/manual-ip-input.png)
-- **Loading State**: ![Loading State](screenshots/loading-state.png)
+- **Manual IP Input**: ![Manual IP Input](./src/assets/screnshots/input.jpg)
+<!-- - **Loading State**: ![Loading State](screenshots/loading-state.png) -->
 
 ## Installation
 ### Frontend
@@ -26,3 +26,17 @@ git clone https://github.com/your-username/ip-finder.git
 cd ip-finder
 npm install
 npm run dev
+```
+
+### Backend
+```
+bash
+git clone https://github.com/your-username/ip-finder-backend.git
+cd ip-finder-backend
+npm install
+npm start
+```
+
+### Deployment
+**Frontend: https://ip-finder-react-app.vercel.app**
+**Backend: https://ip-finder-backend-phi.vercel.app**
